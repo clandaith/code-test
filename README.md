@@ -78,6 +78,19 @@ curl -X POST http://localhost:8080/note \
 }
 ```
 
+### Delete Note
+
+**Endpoint:** `DELETE /note?id={id}`
+
+**Description:** Deletes a note by its ID.
+
+**Example:**
+```bash
+curl -X DELETE "http://localhost:8080/note?id=1"
+```
+
+**Response:** No content (204)
+
 ### Get All Notes
 
 **Endpoint:** `GET /notes`

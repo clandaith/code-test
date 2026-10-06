@@ -53,4 +53,18 @@ class NoteControllerTest {
         assertThat(note.getId()).isNotNull();
         logger.info("DEBUG MSG: Completed testPostNote successfully");
     }
+
+    @Test
+    void testDeleteNote() {
+        logger.info("DEBUG MSG: Starting testDeleteNote");
+        Note noteRequest = new Note(null, "Troy", "Hello, Troy!");
+        Note createdNote = noteController.notePost(noteRequest);
+        Long noteId = createdNote.getId();
+        
+        noteController.deleteNote(noteId);
+        
+        Note retrievedNote = noteController.note(noteId);
+        assertThat(retrievedNote).isNull();
+        logger.info("DEBUG MSG: Completed testDeleteNote successfully");
+    }
 }
